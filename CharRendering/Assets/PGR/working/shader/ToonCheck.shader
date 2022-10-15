@@ -3,7 +3,7 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        [KeywordEnum(R, G, B, Vert)] _Channel("Channel ", Float) = 0
+        [KeywordEnum(R, G, B,A, Vert)] _Channel("Channel ", Float) = 0
     }
     SubShader
     {
@@ -17,7 +17,7 @@
             #pragma fragment frag
             // make fog work
             #pragma multi_compile_fog
-            #pragma multi_compile _CHANNEL_R _CHANNEL_G _CHANNEL_B _CHANNEL_VERT
+            #pragma multi_compile _CHANNEL_R _CHANNEL_G _CHANNEL_B _CHANNEL_A _CHANNEL_VERT
             #include "UnityCG.cginc"
 
             struct appdata
@@ -63,9 +63,13 @@
                 #if _CHANNEL_B
                 col=fixed4(col.z,col.z,col.z,col.w);
                 #endif
+                
+                #if _CHANNEL_A
+                col=fixed4(col.w,col.w,col.w,col.w);
+                #endif
 
                 #if _CHANNEL_VERT
-                col=fixed4(i.color.z,i.color.z,i.color.z,i.color.w);
+                col=fixed4(i.color.x,i.color.y,i.color.z,i.color.w);
                 //col=fixed4(i.color.x,i.color.y,i.color.z,i.color.w);
                 #endif
                 // apply fog
