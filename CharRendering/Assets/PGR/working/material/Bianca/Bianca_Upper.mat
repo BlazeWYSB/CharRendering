@@ -66,6 +66,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaClip: 0
+    - _AngelCurvity: 0.22
     - _Blend: 0
     - _BumpScale: 1
     - _Cull: 2
@@ -80,11 +81,13 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _ShadowLerp: 0.056
-    - _ShadowRange: 0.977
+    - _ShadowRange: 0.95
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpecularPower: 1
+    - _SpecularRange: 0
+    - _SpecularStrength: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1

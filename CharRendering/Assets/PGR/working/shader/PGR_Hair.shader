@@ -26,6 +26,8 @@
             // make fog work
             #pragma multi_compile_fog
 
+
+
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
 

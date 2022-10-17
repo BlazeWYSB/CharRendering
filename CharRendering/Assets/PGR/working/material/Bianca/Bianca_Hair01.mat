@@ -66,7 +66,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaClip: 0
-    - _AngelCurvity: 2.15
+    - _AngelCurvity: 1.72
     - _Blend: 0
     - _BumpScale: 1
     - _Cull: 2
@@ -86,8 +86,8 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpecularPower: 28.3
-    - _SpecularRange: 23.1
-    - _SpecularStrength: 0.205
+    - _SpecularRange: 25.39
+    - _SpecularStrength: 0.291
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1

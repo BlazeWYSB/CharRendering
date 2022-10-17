@@ -81,7 +81,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _ShadowLerp: 0.056
-    - _ShadowRange: 0.953
+    - _ShadowRange: 0.99
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

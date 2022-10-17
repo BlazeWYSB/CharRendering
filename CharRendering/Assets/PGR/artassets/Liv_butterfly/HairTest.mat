@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: HairTest
   m_Shader: {fileID: 4800000, guid: c7c8d2b37dca14d408c036525d9daa25, type: 3}
-  m_ShaderKeywords: _CHANNEL_A
+  m_ShaderKeywords: _CHANNEL_VERT _CHANNEL_VERT_B
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -64,7 +64,7 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
-    - _Channel: 3
+    - _Channel: 6
     - _Cull: 2
     - _Cutoff: 0.5
     - _DstBlend: 0
