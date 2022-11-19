@@ -7,12 +7,21 @@
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" "RenderPipeline"="UniversalRenderPipeline"}
-        LOD 100
+        Tags {  "RenderPipeline" = "UniversalRenderPipeline"  "IgnoreProjector" = "True" "RenderType" = "Opaque"}
+        //LOD 100
         Cull Front
 
         Pass
         {
+            
+            //Stencil
+            //{
+            //    Ref 1
+            //    Comp Greater
+            //    Pass Keep
+            //    Fail Keep
+            //}
+            Tags { "LightMode" = "UniversalForward" }
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -31,11 +40,11 @@
             struct Varyings
             {
                 float4 positionCS : SV_POSITION;
-                float3 color: TEXCOORD0;
+                float color: TEXCOORD0;
             };
             
             CBUFFER_START(UnityPerMaterial)
-            real4 _OutlineColor;
+            float4 _OutlineColor;
             real _Outline;
             CBUFFER_END
 
@@ -52,7 +61,7 @@
 				float3x3 TtoO = float3x3(tangentos.x, bitangent.x, normalos.x,
 										tangentos.y, bitangent.y, normalos.y,
 										tangentos.z, bitangent.z, normalos.z);
-				vertNormal = mul(TtoO, vertNormal);	
+				vertNormal = mul(TtoO, vertNormal)*v.color.b;	
                 o.positionCS =TransformObjectToHClip(v.positionOS);
                  //法线转到屏幕坐标
                 float3 vNormal = normalize(mul((float3x3)UNITY_MATRIX_IT_MV, vertNormal));
@@ -60,14 +69,14 @@
                 float2 projPos = normalize(mul((float2x2)UNITY_MATRIX_P,vNormal.xy));
                 
                 o.positionCS.xy += projPos * _Outline * 0.1;
-                o.color=v.color.b*v.color.a;
+                o.color=v.color.b;
                 return o;
             }
 
-            real4 frag (Varyings i) : SV_Target
+            float4 frag (Varyings i) : SV_Target
             {
                 
-                return _OutlineColor*float4(i.color,1);
+                return float4(_OutlineColor.xyz,i.color);
             }
             ENDHLSL
         }

@@ -61,12 +61,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_9DB56A8D_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 8579cae26ee113b4aaccc6d53b68782e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_6B55F64F: 0
+    - Vector1_6B55F64F: 0.49
     - _AlphaClip: 0
     - _AngelCurvity: 1
     - _Blend: 0

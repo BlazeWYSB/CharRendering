@@ -87,7 +87,7 @@
 
                 #if _CHANNEL_VERT_A
                 col=fixed4(i.color.a,i.color.a,i.color.a,i.color.w);
-                col=fixed4(i.color.x,i.color.y,zz,i.color.w);
+               // col=fixed4(i.color.x,i.color.y,zz,i.color.w);
                 #endif
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
